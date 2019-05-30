@@ -1,5 +1,3 @@
-https://jandem.github.io/diswasm/
-
 # Notes
 
 objdump from Binutils compiled to WebAssembly using Emscripten.
