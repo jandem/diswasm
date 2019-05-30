@@ -1,0 +1,27 @@
+body {
+    font-family: sans-serif;
+}
+input#cmd {
+    width: 30em;
+}
+textarea#input {
+    width: 100%;
+    height: 10em;
+    font-family: monospace;
+    font-size: 13px;
+}
+
+label {
+    float: left;
+    width: 8em;
+}
+
+#output .addr {
+    color: #777;
+}
+#output .bytes {
+    color: darkgreen;
+}
+#output .instr {
+    color: navy;
+}

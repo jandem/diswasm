@@ -1,0 +1,35 @@
+<!doctype html>
+
+<title>Disassembler</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+Online disassembler based on objdump compiled to WebAssembly using Emscripten.<br><br>
+
+<label>Architecture: </label><select id="arch" onchange="setCommand()"></select><br>
+
+<div id="x86_fields">
+  <label>Syntax:</label> <select id="x86_syntax" onchange="setCommand()"><option value="att">AT&T</option><option value="intel">Intel</option></select>
+</div>
+
+<div id="arm_fields">
+  <label>Force thumb:</label> <input id="arm_thumb" type="checkbox" onchange="setCommand()">
+</div>
+
+<label>Base address:</label> <input type="text" id="base" value="0x10000" onchange="setCommand()"><br>
+
+<div><label>Command:</label> <input type="text" id="cmd" onchange="disassemble()"></div>
+
+<textarea id="input" onkeyup="disassemble()">
+55 48 89 e5 41 57 41 56 41 55 41 54 53 48 81 ec 28 07 00 00 49 89 f7 41 89 fc
+cc cc
+0f a2
+48 0f c7 f3 </textarea><br>
+
+<button onclick="disassemble()">Go</button>
+
+<script src="main.js"></script>
+
+<hr>
+Output:
+
+<pre id="output">Loading...</pre>
