@@ -10,7 +10,7 @@ Module.print = Module.printErr = function(s) {
     postMessage({id:"output", data:s})
 }
 
-importScripts("module.js");
+importScripts("objdump.js");
 
 Module.onRuntimeInitialized = function() {
     postMessage({id:"ready"});
